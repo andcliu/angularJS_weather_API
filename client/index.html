@@ -1,41 +1,51 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="weatherApp">
 <head>
 	<title></title>
 
-	<script type="text/javascript" src="angular/angular.js"></script>
-	<script type="text/javascript" src="angular-route/angular-route.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 
-	<script type="text/javascript">
-		var app = angular.module('app', ['ngRoute']);
+    <link rel="stylesheet" type="text/less" href="style.less">
 
-		app.config(function($routeProvider){
-			$routeProvider
-			.when('/', {
-				templateUrl: 'partials/partial1.html'
-				// controller:
-				// controllerAs:
-			})
-			.when('/partial2', {
-				templateUrl: 'partials/partial2.html'
-			})
-			.otherwise({
-				redirectTo: '/'
-			});
-		});
-	</script>
 
 </head>
 <body>
-	<div ng-view>
-		
-	</div>
-	<h1>
-		hello
-	</h1>
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#">AngularJs Weather Forecast</a>
 
-	<a href="#!/"> Home </a> | 
-	<a href="#!/partial2"> Next </a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#!/">Home <span class="sr-only">(current)</span></a>
+				</li>
+	<!-- 			<li class="nav-item">
+					<a class="nav-link" href="#">Forecast</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li> -->
+			</ul>
+		<!-- 	<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form> -->
+		</div>
+	</nav>
+
+	<div class="container">
+		<div ng-view></div>
+	</div>
+
 
 </body>
+	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src='less/dist/less.min.js'></script>
+	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular/angular.js"></script>
+	<script type="text/javascript" src="angular-route/angular-route.js"></script>
+	<script type="text/javascript" src='angular-resource/angular-resource.js'></script>
+	<script type="text/javascript" src="app.js"></script>
 </html>
