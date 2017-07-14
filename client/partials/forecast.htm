@@ -13,18 +13,7 @@ Days:
 <div ng-repeat="w in weatherResult.list">
 	<div class="row">
 		<div class="col-sm-12">
-			<div class="panel panel-default">
-				<div class="panel-heading well">
-					<h3 class="panel-title">
-						{{convertToDate(w.dt) | date: "MMM d, y"}}
-					</h3>
-				</div>
-				<div class="panel-body">
-					<h4>
-						Daytime temperature: {{ convertToFahrenheit(w.temp.day)}}
-					</h4>
-				</div>
-			</div>
+			<weather-report weather-day="w" convert-to-standard="convertToFahrenheit(dayTimeTemp)" convert-to-date="convertToDate(dt)" date-format="MMMM d, y"></weather-report>
 		</div>
 	</div>
 </div>
